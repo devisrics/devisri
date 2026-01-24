@@ -1,37 +1,27 @@
-const skillCategories = [
-  {
-    title: 'Frontend Development',
-    skills: ['HTML5', 'CSS3', 'JavaScript (ES6+)', 'React.js', 'Bootstrap', 'Tailwind CSS'],
-  },
-  {
-    title: 'Backend Development',
-    skills: ['Node.js', 'Express.js', 'REST APIs'],
-  },
-  {
-    title: 'Databases',
-    skills: ['MongoDB', 'SQL', 'MySQL'],
-  },
-  {
-    title: 'Programming Languages',
-    skills: ['Python', 'JavaScript', 'TypeScript'],
-  },
-  {
-    title: 'Core CS Concepts',
-    skills: ['Data Structures & Algorithms', 'OOP', 'Operating Systems', 'Computer Networks', 'DBMS'],
-  },
-  {
-    title: 'Tools & Platforms',
-    skills: ['Git', 'GitHub', 'VS Code', 'Postman', 'Thunder Client', 'AWS EC2', 'Canva'],
-  },
-  {
-    title: 'Coding Platforms',
-    skills: ['LeetCode', 'HackerRank'],
-  },
-];
-
+const skillCategories = [{
+  title: 'Frontend Development',
+  skills: ['HTML5', 'CSS3', 'JavaScript (ES6+)', 'React.js', 'Bootstrap', 'Tailwind CSS']
+}, {
+  title: 'Backend Development',
+  skills: ['Node.js', 'Express.js', 'REST APIs']
+}, {
+  title: 'Databases',
+  skills: ['MongoDB', 'SQL', 'MySQL']
+}, {
+  title: 'Programming Languages',
+  skills: ['Python', 'JavaScript', 'TypeScript']
+}, {
+  title: 'Core CS Concepts',
+  skills: ['Data Structures & Algorithms', 'OOP', 'Operating Systems', 'Computer Networks', 'DBMS']
+}, {
+  title: 'Tools & Platforms',
+  skills: ['Git', 'GitHub', 'VS Code', 'Postman', 'Thunder Client', 'AWS EC2', 'Canva']
+}, {
+  title: 'Coding Platforms',
+  skills: ['LeetCode', 'HackerRank']
+}];
 const SkillsSection = () => {
-  return (
-    <section id="skills" className="section-padding">
+  return <section id="skills" className="section-padding">
       <div className="section-container">
         <div className="text-center max-w-2xl mx-auto mb-12">
           <p className="text-primary font-medium mb-2">Skills</p>
@@ -41,27 +31,16 @@ const SkillsSection = () => {
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {skillCategories.map((category, categoryIndex) => (
-            <div
-              key={category.title}
-              className="card-elevated p-6 space-y-4"
-            >
+          {skillCategories.map((category, categoryIndex) => <div key={category.title} className="card-elevated p-6 space-y-4">
               <h3 className="font-semibold text-foreground text-lg border-b border-border pb-3">
                 {category.title}
               </h3>
               <div className="flex flex-wrap gap-2">
-                {category.skills.map((skill) => (
-                  <span key={skill} className="skill-tag">
-                    {skill}
-                  </span>
-                ))}
+                {category.skills.map(skill => {})}
               </div>
-            </div>
-          ))}
+            </div>)}
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default SkillsSection;
