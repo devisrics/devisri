@@ -1,5 +1,14 @@
-import { Mail, Phone, MapPin, Linkedin, Github, Send } from 'lucide-react';
+import { useState, useRef } from 'react';
+import emailjs from '@emailjs/browser';
+import { Mail, Phone, MapPin, Linkedin, Github, Send, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { useToast } from '@/hooks/use-toast';
+
+const EMAILJS_SERVICE_ID = 'service_7c60r2a';
+const EMAILJS_TEMPLATE_ID = 'template_prhg4j7';
+const EMAILJS_PUBLIC_KEY = 'plT2AW5ReF2HqZyZL';
 
 const contactInfo = [
   {
@@ -35,6 +44,39 @@ const contactInfo = [
 ];
 
 const ContactSection = () => {
+  const formRef = useRef<HTMLFormElement>(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const { toast } = useToast();
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formRef.current) return;
+
+    setIsLoading(true);
+    try {
+      await emailjs.sendForm(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        formRef.current,
+        EMAILJS_PUBLIC_KEY
+      );
+      toast({
+        title: "Message sent!",
+        description: "Thank you for reaching out. I'll get back to you soon!",
+      });
+      formRef.current.reset();
+    } catch (error) {
+      console.error('EmailJS error:', error);
+      toast({
+        title: "Failed to send message",
+        description: "Please try again or email me directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <section id="contact" className="section-padding">
       <div className="section-container">
@@ -48,48 +90,91 @@ const ContactSection = () => {
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {contactInfo.map((item) => (
-              <div
-                key={item.label}
-                className="card-elevated p-5 flex items-center gap-4"
-              >
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <item.icon className="w-5 h-5 text-primary" />
+        <div className="max-w-5xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-8">
+            {/* Contact Form */}
+            <div className="card-elevated p-6 sm:p-8">
+              <h3 className="text-xl font-semibold text-foreground mb-6">Send a Message</h3>
+              <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
+                <div>
+                  <Input
+                    type="text"
+                    name="from_name"
+                    placeholder="Your Name"
+                    required
+                    className="bg-background"
+                  />
                 </div>
-                <div className="min-w-0">
-                  <p className="text-sm text-muted-foreground">{item.label}</p>
-                  {item.href ? (
-                    <a
-                      href={item.href}
-                      target={item.href.startsWith('http') ? '_blank' : undefined}
-                      rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                      className="text-foreground font-medium text-sm hover:text-primary transition-colors truncate block"
-                    >
-                      {item.value}
-                    </a>
+                <div>
+                  <Input
+                    type="email"
+                    name="from_email"
+                    placeholder="Your Email"
+                    required
+                    className="bg-background"
+                  />
+                </div>
+                <div>
+                  <Input
+                    type="text"
+                    name="subject"
+                    placeholder="Subject"
+                    required
+                    className="bg-background"
+                  />
+                </div>
+                <div>
+                  <Textarea
+                    name="message"
+                    placeholder="Your Message"
+                    required
+                    rows={5}
+                    className="bg-background resize-none"
+                  />
+                </div>
+                <Button type="submit" size="lg" className="w-full" disabled={isLoading}>
+                  {isLoading ? (
+                    <>
+                      <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                      Sending...
+                    </>
                   ) : (
-                    <p className="text-foreground font-medium text-sm truncate">{item.value}</p>
+                    <>
+                      <Send className="w-4 h-4 mr-2" />
+                      Send Message
+                    </>
                   )}
-                </div>
-              </div>
-            ))}
-          </div>
+                </Button>
+              </form>
+            </div>
 
-          {/* CTA Section */}
-          <div className="mt-12 text-center">
-            <div className="card-elevated inline-block px-8 py-8 max-w-lg">
-              <h3 className="text-xl font-semibold text-foreground mb-3">Ready to Work Together?</h3>
-              <p className="text-muted-foreground mb-6">
-                Feel free to reach out if you're looking for a dedicated developer who's eager to learn and contribute.
-              </p>
-              <Button size="lg" asChild>
-                <a href="mailto:devisrics13@gmail.com">
-                  <Send className="w-4 h-4 mr-2" />
-                  Send an Email
-                </a>
-              </Button>
+            {/* Contact Info */}
+            <div className="space-y-4">
+              {contactInfo.map((item) => (
+                <div
+                  key={item.label}
+                  className="card-elevated p-5 flex items-center gap-4"
+                >
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <item.icon className="w-5 h-5 text-primary" />
+                  </div>
+                  <div className="min-w-0">
+                    <p className="text-sm text-muted-foreground">{item.label}</p>
+                    {item.href ? (
+                      <a
+                        href={item.href}
+                        target={item.href.startsWith('http') ? '_blank' : undefined}
+                        rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                        className="text-foreground font-medium text-sm hover:text-primary transition-colors truncate block"
+                      >
+                        {item.value}
+                      </a>
+                    ) : (
+                      <p className="text-foreground font-medium text-sm truncate">{item.value}</p>
+                    )}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
