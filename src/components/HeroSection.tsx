@@ -9,7 +9,7 @@ const HeroSection = () => {
           <div className="order-2 lg:order-1 space-y-6">
             <div className="space-y-4 animate-fade-in-up">
               <p className="text-primary font-medium">Hello, I'm</p>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight">DEV V E</h1>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight">DEVISRI V E</h1>
               <p className="text-xl sm:text-2xl text-muted-foreground">
                 <span className="text-gradient font-semibold">Software Development Engineer</span>
                 <br />

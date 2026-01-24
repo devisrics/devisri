@@ -36,7 +36,14 @@ const SkillsSection = () => {
                 {category.title}
               </h3>
               <div className="flex flex-wrap gap-2">
-                {category.skills.map(skill => {})}
+                {category.skills.map((skill) => (
+                  <span
+                    key={skill}
+                    className="px-3 py-1.5 bg-secondary text-secondary-foreground rounded-full text-sm font-medium hover:bg-primary hover:text-primary-foreground transition-colors duration-200"
+                  >
+                    {skill}
+                  </span>
+                ))}
               </div>
             </div>)}
         </div>
