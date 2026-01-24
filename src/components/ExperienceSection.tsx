@@ -9,7 +9,6 @@ const experienceData = [
       'Built responsive user interfaces using React, Bootstrap, HTML, and CSS',
       'Developed backend APIs with Node.js and Express.js',
       'Worked with REST APIs and implemented Git-based version control',
-      'Collaborated with team members to deliver quality web solutions',
     ],
   },
   {

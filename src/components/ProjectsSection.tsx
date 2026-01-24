@@ -6,7 +6,7 @@ const projects = [
     title: 'Local Service Community Provider',
     description:
       'A full-stack web application connecting users with nearby service professionals. Enables discovery, interaction, and seamless service engagement with a responsive, user-friendly interface.',
-    techStack: ['Node.js', 'Express.js', 'MongoDB', 'React.js'],
+    techStack: ['Node.js', 'Express.js', 'MongoDB', 'React.js','Bootstrap'],
     features: ['Service Discovery','Category-Based Listings','Responsive User Interface','Backend API Integration'],
     github: 'https://github.com/devisrics',
   },
