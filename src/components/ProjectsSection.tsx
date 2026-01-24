@@ -7,7 +7,7 @@ const projects = [
     description:
       'A full-stack web application connecting users with nearby service professionals. Enables discovery, interaction, and seamless service engagement with a responsive, user-friendly interface.',
     techStack: ['Node.js', 'Express.js', 'MongoDB', 'React.js'],
-    features: ['User-Provider Matching', 'Interactive UI', 'Service Discovery', 'Real-time Communication'],
+    features: ['Service Discovery','Category-Based Listings','Responsive User Interface','Backend API Integration'],
     github: 'https://github.com/devisrics',
   },
   {
@@ -16,7 +16,7 @@ const projects = [
       'A comprehensive full-stack eCommerce platform for browsing, ordering, and tracking products. Features secure user authentication, admin dashboard, and integrated payment processing.',
     techStack: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'Bootstrap', 'Stripe'],
     features: ['User Authentication', 'Admin Dashboard', 'Stripe Payment Integration', 'Order Tracking'],
-    github: 'https://github.com/devisrics',
+    github: 'https://github.com/devisrics/ECOMMERCE_CART',
   },
 ];
 
@@ -104,18 +104,6 @@ const ProjectsSection = () => {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Career Focus */}
-        <div className="mt-16 text-center">
-          <div className="card-elevated inline-block px-8 py-6 max-w-2xl">
-            <h3 className="text-lg font-semibold text-foreground mb-2">Career Focus</h3>
-            <p className="text-muted-foreground">
-              I'm actively seeking <span className="text-primary font-medium">entry-level Software Developer</span> and{' '}
-              <span className="text-primary font-medium">Full-Stack Developer</span> roles. Currently focused on
-              learning, building meaningful projects, and strengthening my problem-solving abilities.
-            </p>
-          </div>
         </div>
       </div>
     </section>

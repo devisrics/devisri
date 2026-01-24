@@ -61,16 +61,16 @@ const ContactSection = () => {
         EMAILJS_PUBLIC_KEY
       );
       toast({
-        title: "Message sent!",
+        title: 'Message sent!',
         description: "Thank you for reaching out. I'll get back to you soon!",
       });
       formRef.current.reset();
     } catch (error) {
       console.error('EmailJS error:', error);
       toast({
-        title: "Failed to send message",
-        description: "Please try again or email me directly.",
-        variant: "destructive",
+        title: 'Failed to send message',
+        description: 'Please try again or email me directly.',
+        variant: 'destructive',
       });
     } finally {
       setIsLoading(false);
@@ -86,69 +86,15 @@ const ContactSection = () => {
             Let's Connect
           </h2>
           <p className="text-muted-foreground mt-4">
-            I'm open to discussing new opportunities, collaborations, or just having a friendly chat about technology!
+            I'm open to discussing new opportunities, collaborations, or just
+            having a friendly chat about technology!
           </p>
         </div>
 
         <div className="max-w-5xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-8">
-            {/* Contact Form */}
-            <div className="card-elevated p-6 sm:p-8">
-              <h3 className="text-xl font-semibold text-foreground mb-6">Send a Message</h3>
-              <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
-                <div>
-                  <Input
-                    type="text"
-                    name="from_name"
-                    placeholder="Your Name"
-                    required
-                    className="bg-background"
-                  />
-                </div>
-                <div>
-                  <Input
-                    type="email"
-                    name="from_email"
-                    placeholder="Your Email"
-                    required
-                    className="bg-background"
-                  />
-                </div>
-                <div>
-                  <Input
-                    type="text"
-                    name="subject"
-                    placeholder="Subject"
-                    required
-                    className="bg-background"
-                  />
-                </div>
-                <div>
-                  <Textarea
-                    name="message"
-                    placeholder="Your Message"
-                    required
-                    rows={5}
-                    className="bg-background resize-none"
-                  />
-                </div>
-                <Button type="submit" size="lg" className="w-full" disabled={isLoading}>
-                  {isLoading ? (
-                    <>
-                      <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                      Sending...
-                    </>
-                  ) : (
-                    <>
-                      <Send className="w-4 h-4 mr-2" />
-                      Send Message
-                    </>
-                  )}
-                </Button>
-              </form>
-            </div>
-
-            {/* Contact Info */}
+            
+            {/* LEFT SIDE – CONTACT DETAILS */}
             <div className="space-y-4">
               {contactInfo.map((item) => (
                 <div
@@ -170,12 +116,65 @@ const ContactSection = () => {
                         {item.value}
                       </a>
                     ) : (
-                      <p className="text-foreground font-medium text-sm truncate">{item.value}</p>
+                      <p className="text-foreground font-medium text-sm truncate">
+                        {item.value}
+                      </p>
                     )}
                   </div>
                 </div>
               ))}
             </div>
+
+            {/* RIGHT SIDE – CONTACT FORM */}
+            <div className="card-elevated p-6 sm:p-8">
+              <h3 className="text-xl font-semibold text-foreground mb-6">
+                Send a Message
+              </h3>
+              <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
+                <Input
+                  type="text"
+                  name="from_name"
+                  placeholder="Your Name"
+                  required
+                  className="bg-background"
+                />
+                <Input
+                  type="email"
+                  name="from_email"
+                  placeholder="Your Email"
+                  required
+                  className="bg-background"
+                />
+                <Input
+                  type="text"
+                  name="subject"
+                  placeholder="Subject"
+                  required
+                  className="bg-background"
+                />
+                <Textarea
+                  name="message"
+                  placeholder="Your Message"
+                  required
+                  rows={5}
+                  className="bg-background resize-none"
+                />
+                <Button type="submit" size="lg" className="w-full" disabled={isLoading}>
+                  {isLoading ? (
+                    <>
+                      <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-4 h-4 mr-2" />
+                      Send Message
+                    </>
+                  )}
+                </Button>
+              </form>
+            </div>
+
           </div>
         </div>
       </div>

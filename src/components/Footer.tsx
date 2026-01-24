@@ -14,7 +14,7 @@ const Footer = () => {
             </div>
             <div>
               <p className="font-semibold">Devisri V E</p>
-              <p className="text-sm text-background/70">Full-Stack Developer</p>
+              <p className="text-sm text-background/70">Full-Stack Developer (MERN)</p>
             </div>
           </div>
 

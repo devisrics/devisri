@@ -80,7 +80,19 @@ const ExperienceSection = () => {
           </div>
         </div>
       </div>
+    {/* Career Focus */}
+        <div className="mt-16 text-center">
+          <div className="card-elevated inline-block px-8 py-6 max-w-2xl">
+            <h3 className="text-lg font-semibold text-foreground mb-2">Career Focus</h3>
+            <p className="text-muted-foreground">
+              I'm actively seeking <span className="text-primary font-medium">entry-level Software Developer</span> and{' '}
+              <span className="text-primary font-medium">Full-Stack Developer</span> roles. Currently focused on
+              learning, building meaningful projects, and strengthening my problem-solving abilities.
+            </p>
+          </div>
+        </div>
     </section>
+    
   );
 };
 

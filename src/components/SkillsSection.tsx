@@ -1,15 +1,15 @@
 const skillCategories = [{
   title: 'Frontend Development',
-  skills: ['HTML5', 'CSS3', 'JavaScript (ES6+)', 'React.js', 'Bootstrap', 'Tailwind CSS']
+  skills: ['HTML5', 'CSS3', 'JavaScript (ES6+)', 'React.js', 'Bootstrap']
 }, {
   title: 'Backend Development',
   skills: ['Node.js', 'Express.js', 'REST APIs']
 }, {
   title: 'Databases',
-  skills: ['MongoDB', 'SQL', 'MySQL']
+  skills: ['MongoDB', 'SQL']
 }, {
   title: 'Programming Languages',
-  skills: ['Python', 'JavaScript', 'TypeScript']
+  skills: ['Python', 'JavaScript']
 }, {
   title: 'Core CS Concepts',
   skills: ['Data Structures & Algorithms', 'OOP', 'Operating Systems', 'Computer Networks', 'DBMS']
