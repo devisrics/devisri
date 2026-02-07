@@ -1,25 +1,25 @@
-import { Code2, Lightbulb, Target, Zap } from 'lucide-react';
+import { Code2, Cpu, Globe, Layers } from 'lucide-react';
 
 const highlights = [
   {
     icon: Code2,
-    title: 'MERN Stack',
-    description: 'Building full-stack applications with MongoDB, Express.js, React, and Node.js',
+    title: 'Full-Stack Architecture',
+    description: 'Engineering scalable systems using the MERN stack with a focus on RESTful API design and database optimization.',
   },
   {
-    icon: Lightbulb,
-    title: 'Problem Solver',
-    description: 'Strong foundation in DSA with regular practice on LeetCode & HackerRank',
+    icon: Layers,
+    title: 'Modern Frontend',
+    description: 'Building responsive, high-performance UIs with React, Tailwind CSS, and Framer Motion for seamless UX.',
   },
   {
-    icon: Target,
-    title: 'CS Fundamentals',
-    description: 'Solid grasp of OOP, Operating Systems, Computer Networks, and DBMS',
+    icon: Cpu,
+    title: 'Systems & Performance',
+    description: 'Applying core CS fundamentals—OS, DBMS, and Computer Networks—to write optimized, low-latency code.',
   },
   {
-    icon: Zap,
-    title: 'Quick Learner',
-    description: 'Continuously learning new technologies and improving development skills',
+    icon: Globe,
+    title: 'Production-Ready',
+    description: 'Experience in version control (Git), CI/CD workflows, and deploying robust applications to cloud environments.',
   },
 ];
 
@@ -28,41 +28,38 @@ const AboutSection = () => {
     <section id="about" className="section-padding bg-secondary/30">
       <div className="section-container">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Left - Text Content */}
           <div className="space-y-6">
             <div className="space-y-2">
-              <p className="text-primary font-medium">About Me</p>
+              <p className="text-primary font-bold uppercase tracking-wider text-sm">Capabilities</p>
               <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
-                Passionate About Building Impactful Software
+                Turning Technical Constraints into Scalable Solutions
               </h2>
             </div>
 
-            <div className="space-y-4 text-muted-foreground">
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                I'm a final-year Computer Science Engineering student at University College of Engineering Panruti, affiliated with Anna University. My journey in tech has been driven by a deep curiosity for how software can solve real-world problems.
+                I am a Software Engineer specializing in the <strong>MERN Stack</strong>, focused on bridging the gap between complex backend logic and intuitive frontend experiences. 
               </p>
               <p>
-                With hands-on experience in full-stack web development using the MERN stack, I've built multiple projects from concept to deployment. I believe in writing clean, maintainable code and continuously improving my craft through practice and learning.
+                Beyond writing code, I prioritize <strong>maintainability and performance</strong>. Whether it’s optimizing MongoDB queries or architecting reusable React components, my goal is to build software that scales without breaking.
               </p>
-              <p>
-                Currently seeking entry-level Software Developer or Full-Stack Developer roles where I can contribute, learn, and grow alongside a passionate team.
+              <p className="border-l-4 border-primary pl-4 italic">
+                Currently open to Software Engineering roles where I can apply my expertise in full-stack development to high-impact projects.
               </p>
             </div>
           </div>
 
-          {/* Right - Highlight Cards */}
           <div className="grid sm:grid-cols-2 gap-4">
             {highlights.map((item, index) => (
               <div
                 key={item.title}
-                className="card-elevated p-6 space-y-3"
-                style={{ animationDelay: `${index * 100}ms` }}
+                className="group card-elevated p-6 space-y-3 hover:border-primary/50 transition-colors"
               >
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                  <item.icon className="w-6 h-6 text-primary" />
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all">
+                  <item.icon className="w-6 h-6" />
                 </div>
-                <h3 className="font-semibold text-foreground">{item.title}</h3>
-                <p className="text-sm text-muted-foreground">{item.description}</p>
+                <h3 className="font-bold text-foreground">{item.title}</h3>
+                <p className="text-sm text-muted-foreground line-height-relaxed">{item.description}</p>
               </div>
             ))}
           </div>
