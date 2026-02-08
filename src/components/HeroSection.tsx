@@ -18,13 +18,13 @@ const HeroSection = () => {
             </div>
 
             <p className="text-muted-foreground text-base md:text-lg max-w-lg animate-fade-in-up animation-delay-100">
-              Final-year Computer Science Engineering student at Anna University with hands-on experience in MERN stack development. Passionate about building scalable web applications and solving complex problems.
+              I focus on building applications that solve real-world problems while maintaining clean architecture and smooth user experience. Currently expanding my expertise through hands-on development and continuous problem-solving practice.
             </p>
 
             <div className="flex flex-wrap gap-4 animate-fade-in-up animation-delay-200">
               <Button size="lg" asChild>
                 <a href="#projects">
-                  View Projects
+                  View My Projects
                   <ArrowDown className="ml-2 h-4 w-4" />
                 </a>
               </Button>

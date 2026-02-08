@@ -6,20 +6,10 @@ const experienceData = [
     company: 'NLC India Limited',
     period: 'July 2025',
     description: [
-      'Built responsive user interfaces using React, Bootstrap, HTML, and CSS',
-      'Developed backend APIs with Node.js and Express.js',
-      'Worked with REST APIs and implemented Git-based version control',
-    ],
-  },
-  {
-    title: 'Python Programming Intern',
-    company: 'CodSoft',
-    period: 'October 2024',
-    description: [
-      'Developed Python programs focusing on logic and problem-solving skills',
-      'Hands-on work with data handling, control flow, and modular code',
-      'Strengthened programming fundamentals through practical projects',
-    ],
+      'Built responsive user interfaces using React and Bootstrap, ensuring cross-browser compatibility',
+      'Developed and optimized backend REST APIs using Node.js and Express.js to streamline data flow',
+      'Collaborated in a Git-based environment to maintain code integrity and version control'
+    ]
   },
 ];
 
@@ -78,20 +68,8 @@ const ExperienceSection = () => {
             ))}
           </div>
         </div>
-      </div>
-    {/* Career Focus */}
-        <div className="mt-16 text-center">
-          <div className="card-elevated inline-block px-8 py-6 max-w-2xl">
-            <h3 className="text-lg font-semibold text-foreground mb-2">Career Focus</h3>
-            <p className="text-muted-foreground">
-              I'm actively seeking <span className="text-primary font-medium">entry-level Software Developer</span> and{' '}
-              <span className="text-primary font-medium">Full-Stack Developer</span> roles. Currently focused on
-              learning, building meaningful projects, and strengthening my problem-solving abilities.
-            </p>
-          </div>
-        </div>
+      </div>   
     </section>
-    
   );
 };
 

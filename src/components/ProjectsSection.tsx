@@ -3,18 +3,23 @@ import { Button } from '@/components/ui/button';
 
 const projects = [
   {
-    title: 'Local Service Community Provider',
-    description:
-      'A full-stack web application connecting users with nearby service professionals. Enables discovery, interaction, and seamless service engagement with a responsive, user-friendly interface.',
-    techStack: ['Node.js', 'Express.js', 'MongoDB', 'React.js','Bootstrap'],
-    features: ['Service Discovery','Category-Based Listings','Responsive User Interface','Backend API Integration'],
-    github: 'https://github.com/devisrics',
+  title: 'LocalConnect – Community Service Booking Platform',
+  description:
+    'A comprehensive full-stack application designed to connect users with reliable local service providers. Supports service discovery, appointment scheduling, and booking management through secure authentication and a responsive interface.',
+  techStack: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'Bootstrap', 'AWS EC2', 'Nginx'],
+  features: [
+    'User Authentication',
+    'Service Discovery & Category Filtering',
+    'Service Booking & Scheduling',
+    'Booking Management Dashboard'
+  ],
+  github: 'https://github.com/devisrics/localconnect',
   },
   {
     title: 'E-Commerce Web Application',
     description:
-      'A comprehensive full-stack eCommerce platform for browsing, ordering, and tracking products. Features secure user authentication, admin dashboard, and integrated payment processing.',
-    techStack: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'Bootstrap', 'Stripe'],
+      'A full-stack eCommerce application that enables users to explore products, place orders, and track purchases. Includes secure authentication, an administrative dashboard, and integrated online payment processing.',
+    techStack: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'Bootstrap','AWS EC2', 'Stripe'],
     features: ['User Authentication', 'Admin Dashboard', 'Stripe Payment Integration', 'Order Tracking'],
     github: 'https://github.com/devisrics/ECOMMERCE_CART',
   },
